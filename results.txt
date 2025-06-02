@@ -1,0 +1,33 @@
+Testing Domain-Theoretic Malliavin Calculus Implementation
+============================================================
+
+Test 1: Quadratic Functional F(W) = W_T^2
+----------------------------------------
+Mean absolute error vs analytical: 0.053520
+W_T = 0.0536
+Analytical D_T F = 0.1071
+Numerical D_T F = 0.1072
+
+Test 2a: European Call Option (In-the-Money)
+----------------------------------------
+W_T = 0.5536
+Spot price S_T = 115.1091
+Option payoff = 15.1091
+Standard Malliavin derivative at T: 23.024131
+Smoothed Malliavin derivative at T: 23.022059
+Analytical Malliavin derivative at T: 23.021829
+
+Test 2b: European Call Option (Out-of-the-Money)
+----------------------------------------
+W_T = -0.4464
+Spot price S_T = 94.2434
+Option payoff = 0.0000
+Malliavin derivative at T: 0.000000
+Delta estimate (integration by parts): 0.418185
+
+Test 3: Algorithm Convergence Analysis
+----------------------------------------
+epsilon = 1e-02, Error = 5.104743e-02
+epsilon = 1e-03, Error = 5.323312e-02
+epsilon = 1e-04, Error = 5.352039e-02
+epsilon = 1e-05, Error = 5.354957e-02
